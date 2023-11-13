@@ -17,7 +17,7 @@ class Stack {
    * @param {T} element
    */
   push(element) {
-    // TODO
+    this.arr.push(element);
   }
 
   /**
@@ -26,7 +26,10 @@ class Stack {
    * @returns {T|undefined}
    */
   pop() {
-    // TODO
+    if (this.isEmpty()) {
+      return undefined;
+    }
+    return this.arr.pop();
   }
 
   /**
@@ -35,17 +38,20 @@ class Stack {
    * @returns {T|undefined}
    */
   peek() {
-    // TODO
+    if (this.isEmpty()) {
+    return undefined;
   }
+  return this.arr[this.arr.length - 1];
+}
 
   /** @returns {boolean} whether the stack is empty. */
   isEmpty() {
-    // TODO
+    return this.arr.length === 0;
   }
 
   /** @returns {number} the number of elements in the stack. */
   size() {
-    // TODO
+    return this.arr.length;
   }
 }
 
